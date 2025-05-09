@@ -6,7 +6,7 @@
 
 ## 简介
 
-r_menu 是一个专为 RedM 开发的上下文菜单系统，参考了流行的 FiveM qb-menu 设计理念，但专门针对西部风格进行了重新设计。使用 React 和 TypeScript 构建，提供了流畅的用户体验和高度的可定制性。
+r_menu 是一个专为 RedM 开发的上下文菜单系统，参考了流行的 FiveM qb-menu 设计理念，但专门针对西部风格进行了重新设计。使用 React 和 TypeScript 构建。
 
 ## 安装
 
