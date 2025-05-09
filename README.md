@@ -53,7 +53,7 @@ local menuItems = {
 }
 
 -- 打开菜单
-exports['r_menu']:openMenu(menuItems)
+exports.r_menu:openMenu(menuItems)
 ```
 
 ### 菜单项参数
