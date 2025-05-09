@@ -22,8 +22,6 @@ r_menu 是一个专为 RedM 开发的上下文菜单系统，参考了流行的 
 
 ## 使用方法
 
-### 基本用法
-
 ```lua
 -- 创建菜单项目
 local menuItems = {
@@ -56,52 +54,6 @@ local menuItems = {
 
 -- 打开菜单
 exports['r_menu']:openMenu(menuItems)
-```
-
-### 子菜单示例
-
-```lua
--- 主菜单
-local menuItems = {
-    {
-        header = "主菜单",
-        isMenuHeader = true,
-    },
-    {
-        header = "进入子菜单",
-        txt = "点击打开子菜单",
-        params = {
-            event = "r_menu:client:subMenu",
-            args = {
-                data = "传递的数据"
-            }
-        }
-    }
-}
-
--- 子菜单事件处理
-RegisterNetEvent('r_menu:client:subMenu', function(data)
-    local subMenuItems = {
-        {
-            header = "< 返回",
-            params = {
-                event = "r_menu:client:returnToMain", -- 自定义返回事件
-            }
-        },
-        {
-            header = "子菜单选项",
-            txt = "这是子菜单选项",
-            params = {
-                event = "r_menu:client:testOption",
-                args = {
-                    message = "你选了子菜单选项"
-                }
-            }
-        },
-    }
-    
-    exports['r_menu']:openMenu(subMenuItems)
-end)
 ```
 
 ### 菜单项参数
