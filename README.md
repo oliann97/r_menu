@@ -82,10 +82,10 @@ exports.r_menu:openMenu(menuItems)
 
 ```lua
 -- 打开菜单
-exports['r_menu']:openMenu(menuItems)
+exports.r_menu:openMenu(menuItems)
 
 -- 关闭菜单
-exports['r_menu']:closeMenu()
+exports.r_menu:closeMenu()
 ```
 
 ## 致敦
