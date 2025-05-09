@@ -12,7 +12,7 @@ r_menu 是一个专为 RedM 开发的上下文菜单系统，参考了流行的 
 
 ### 从 Releases 下载
 
-1. 前往此仓库的 [Releases](https://github.com/USERNAME/r_menu/releases) 页面
+1. 前往此仓库的 [Releases](https://github.com/oliann97/r_menu/releases) 页面
 2. 下载最新版本的压缩包
 3. 解压文件，将 `r_menu` 文件夹放入您的服务器 `resources` 目录
 4. 将 `r_menu` 添加到您的 `server.cfg` 中的资源列表
