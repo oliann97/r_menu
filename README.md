@@ -1,7 +1,7 @@
 # r_menu - RedM 上下文菜单系统
 
 <div align="center">
-  <img src="https://r2.fivemanage.com/o0SQp9T24AoAbL1nduWW2/r_menu.png" alt="预览" width="500px">
+  <img src="https://r2.fivemanage.com/o0SQp9T24AoAbL1nduWW2/r_menu1.1.png" alt="预览" width="500px">
 </div>
 
 ## 简介
@@ -27,27 +27,42 @@ r_menu 是一个专为 RedM 开发的上下文菜单系统，参考了流行的 
 local menuItems = {
     {
         header = "菜单标题",
-        isMenuHeader = true, -- 标记为标题行
+        isMenuHeader = true,
     },
     {
-        header = "选项 1",
-        txt = "选项描述",
+        header = "商店",
+        txt = "查看可购买的物品",
+        icon = "fas fa-store", -- Solid 图标集的 store 图标
         params = {
-            event = "r_menu:client:testOption",
-            args = {
-                message = "你选择了选项 1"
-            }
+            event = "r_menu:client:openShop",
+            args = {}
         }
     },
     {
-        header = "禁用选项",
-        txt = "这个选项无法点击",
-        disabled = true,
+        header = "背包",
+        txt = "打开你的背包",
+        icon = "fas fa-backpack", -- Solid 图标集的 backpack 图标
         params = {
-            event = "r_menu:client:testOption",
-            args = {
-                message = "这不会被触发，因为选项被禁用了"
-            }
+            event = "r_menu:client:openInventory",
+            args = {}
+        }
+    },
+    {
+        header = "马厩",
+        txt = "查看你的马厩",
+        icon = "fas fa-horse", -- Solid 图标集的 horse 图标
+        params = {
+            event = "r_menu:client:openStable",
+            args = {}
+        }
+    },
+    {
+        header = "宠物",
+        txt = "查看你的宠物",
+        icon = "fas fa-paw", -- Solid 图标集的 paw 图标
+        params = {
+            event = "r_menu:client:openPets",
+            args = {}
         }
     }
 }
@@ -56,13 +71,23 @@ local menuItems = {
 exports.r_menu:openMenu(menuItems)
 ```
 
+### 支持的图标格式
+
+* `fas` - Font Awesome Solid 图标集
+* `far` - Font Awesome Regular 图标集
+* `fab` - Font Awesome Brands 图标集
+
+例如："fas fa-horse"，"far fa-envelope"，"fab fa-github"
+
+访问 [Font Awesome 图标库](https://fontawesome.com/icons) 查看所有可用的图标。
+
 ### 菜单项参数
 
 | 参数 | 类型 | 必填 | 描述 |
 |----------|--------|---------|------------------------------------------------------|
 | header | string | 是 | 菜单项标题 |
 | txt | string | 否 | 菜单项描述文本 |
-| icon | string | 否 | 菜单项图标 |
+| icon | string/array | 否 | 菜单项图标，支持 Font Awesome 图标 |
 | isMenuHeader | boolean | 否 | 是否为菜单标题（不可点击） |
 | disabled | boolean | 否 | 是否禁用该选项 |
 | hidden | boolean | 否 | 是否隐藏该选项 |
